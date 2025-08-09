@@ -27,7 +27,7 @@ for name in sorted(common_names):
 
     results.append((name, p_value))
 
-print("локус\tp-value")
+print("locus\tp-value")
 for name, pval in results:
     print(f"{name}\t{pval}")
 
