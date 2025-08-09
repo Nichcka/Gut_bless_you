@@ -20,7 +20,6 @@ Aggregate FastQC reports into a single summary with MultiQC.
 ``` cd ../multiqc ```
 
 ``` multiqc /path/to/result_fastqc_folder ```
-___
 
 ## Mapping
 
@@ -39,7 +38,6 @@ for one assemble:
 **or** use the helper script to process multiple samples **automatically**:
 
 ``` ./run_salmon_hc.sh /path/to/folder_with_*fastq.gz /path/to/results/ ```
-___
 
 ## Making result tables
 
@@ -47,7 +45,6 @@ Aggregate Salmon quantification results with metadata into summary tables.
 
 ``` ./make_result_table.sh /path/to/salmon_results/ /path/to/SQ_loci_meta.csv /path/to/SraRunTable.tsv ```
 
-___
 
 ## Statistics
 
