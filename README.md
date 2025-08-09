@@ -37,7 +37,7 @@ for one assemble:
 
 **or** use the helper script to process multiple samples **automatically**:
 
-``` ./run_salmon_hc.sh /path/to/folder_with_*fastq.gz /path/to/results/ ```
+``` ./run_salmon.sh /path/to/folder_with_*fastq.gz /path/to/results/ ```
 
 ## Making result tables
 
