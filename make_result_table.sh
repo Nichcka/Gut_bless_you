@@ -13,3 +13,5 @@ awk 'BEGIN{FS=OFS="\t"}
 python make_table.py $SQ_LOCI_META
 
 python add.py $SRARUNTABLE
+
+rm 1.tsv 2.tsv 3.tsv
