@@ -1,17 +1,21 @@
 import math
 
-exclude_names = {
-    "MGYG000001539_14:1200701:1214584_nointergenome_regions",
-    "MGYG000003682_6:80423:96047_nointergenome_regions",
-    "MGYG000006849.fa_35:19289:32391_nointergenome_regions",
-    "MGYG000086822_124:24542:36192_nointergenome_regions",
-    "MGYG000117568_24:25311:35480_nointergenome_regions",
-    "MGYG000182605_28:523:10749_nointergenome_regions",
-    "MGYG000209896_54:0:10859_nointergenome_regions",
-    "MGYG000217771_68:1409:7804_nointergenome_regions"
-}
+def get_names_from_file(filename):
+    names = set()
+    with open(filename, "r") as f:
+        for line in f:
+            parts = line.strip().split("\t")
+            if len(parts) < 2:
+                continue
+            names.add(parts[1])
+    return names
 
-def get_data(filename):
+def build_exclude_names(file1, file2):
+    names1 = get_names_from_file(file1)
+    names2 = get_names_from_file(file2)
+    return names1 ^ names2  
+
+def get_data(filename, exclude_names):
     data = {}
     with open(filename, "r") as f:
         for line in f:
@@ -26,10 +30,9 @@ def get_data(filename):
             except ValueError:
                 continue
             if value <= 0:
-                continue 
+                continue
             log_value = math.log(value)
             if name not in data:
                 data[name] = []
             data[name].append(log_value)
     return data
-
