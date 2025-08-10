@@ -9,7 +9,6 @@ ___
 
 Run FastQC for initial quality assessment of raw FASTQ files.
 
-``` cd qc/fastqc ```
 
 ``` fastqc *.fastq.gz -o /path/to/results_folder ```
 
@@ -17,7 +16,6 @@ Run FastQC for initial quality assessment of raw FASTQ files.
 
 Aggregate FastQC reports into a single summary with MultiQC.
 
-``` cd ../multiqc ```
 
 ``` multiqc /path/to/result_fastqc_folder ```
 
@@ -27,7 +25,6 @@ Aggregate FastQC reports into a single summary with MultiQC.
 
 Build a Salmon index and quantify transcript abundance for paired-end reads.
 
-``` cd ../../salmon ```
 
 for one assemble:
 
