@@ -59,4 +59,6 @@ The model searches through all possible combinations of hyperparameters from the
 ``` python forest.py ```
 
 
+### OLS model
 
+Using the OLS model, a statistically significant association between IBS and bacterial expression (TPM) was searched.
