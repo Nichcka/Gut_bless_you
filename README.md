@@ -51,6 +51,12 @@ Perform the Wilcoxon statistical test on TPM tables for comparative analysis.
 
 ``` python wilcoxon.py /path/to/all_tpm_ibs.tsv /path/to/all_tpm_hc.tsv ```
 
+### Random forest
+
+Runs classification using Random Forest.
+The model searches through all possible combinations of hyperparameters from the specified grid (GridSearchCV), selects the best based on accuracy, and evaluates on the test set.
+
+``` python forest.py ```
 
 
 
