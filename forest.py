@@ -109,9 +109,11 @@ print(f"Recall: {recall:.3f}")
 print(f"F1-score: {f1:.3f}")
 
 cm = confusion_matrix(y_test, y_pred)
+cm_percent = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis] * 100
+
 plt.figure(figsize=(6,5))
-sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
-plt.title('Confusion Matrix')
+sns.heatmap(cm_percent, annot=True, fmt='.1f', cmap='Blues', cbar_kws={'format': '%.0f%%'})
+plt.title('Confusion Matrix (Percentage)')
 plt.xlabel('Predicted Label\n0 = HC, 1 = IBS')
 plt.ylabel('True Label\n0 = HC, 1 = IBS')
 plt.show()
